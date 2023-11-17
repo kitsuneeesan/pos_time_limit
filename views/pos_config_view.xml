@@ -1,0 +1,33 @@
+<!-- Inherit Form View to Modify it -->
+<odoo>
+    <record id="pos_config_view_form_time_limit" model="ir.ui.view">
+        <field name="name">POS Config</field>
+        <field name="model">pos.config</field>
+        <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//sheet" position="inside">
+                <h2>Active time</h2>
+                <div class="row mt20 o_settings_container" id="active_time">
+                    <div class="col-16 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="hour_from" string="Start"/>
+                            <div class="text-muted">
+                                    start time to use POS
+                            </div>
+                            <field name="hour_from" widget="float_time"/>
+                        </div>
+                    </div>
+                    <div class="col-16 col-lg-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="hour_to" string="End"/>
+                            <div class="text-muted">
+                                    end time to use POS
+                            </div>
+                            <field name="hour_to" widget="float_time"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
